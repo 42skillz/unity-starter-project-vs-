@@ -12,9 +12,9 @@ This describes how to integrate Unity based testing into your production code ba
 * VS2010 file extensions (sln, vcxproj)
 
 Install Unity
-Go to cpputest.org, and download the latest unit.  
+Go to unity.sourceforge.net, and download the latest unity.  
 Follow the instructions for building it.
-Add an environment variable called UNITY_HOME to your environment variables that points the home directory of CppUTest.
+Add an environment variable called UNITY_HOME to your environment variables that points the home directory of Unity.
 
 Unzip and build the starter project
 Test files and production code files should all be kept in version control.  Assuming your code is already in version control (if not, why not?!), this section describes how to integrate testing into your source repository.
@@ -50,8 +50,8 @@ You should now have this directory structure (assuming VS2010)
 		|-- source
 		|-- mocks
 		|-- tests
-			|-- AllTests.cpp
-			|-- MyFirstTest.cpp
+			|-- AllTests.c
+			|-- MyFirstTest.c
 			|-- AlTests.vcxproj (VS2010)
 		|-- ProductionCodeLib
 			|-- ProductionCodeLib.vcxproj (VS2010)
@@ -64,7 +64,7 @@ Test your initial setup
 
 Rebuild all with Visual Studio.  You should see these test results in the console window:
 
-	compiling MyFirstTest.cpp
+	compiling MyFirstTest.c
 	Linking MyProductTests_tests
 	Running MyProductTests_tests
 	.
@@ -72,7 +72,7 @@ Rebuild all with Visual Studio.  You should see these test results in the consol
 
 Cause the test to fail.  Open example.c, change the return result to 0.  You should see:
 
-	compiling MyFirstTest.cpp
+	compiling MyFirstTest.c
 	Linking MyProductTests_tests
 	Running MyProductTests_tests
 
@@ -89,4 +89,4 @@ Restore the example()'s return result to 1 and see tests pass again.
 Things that can go wrong:
 
 * You build fails because it cannot find Unity includes
-* Define the environment variable UNITY_HOME to be equal to the location of UNITY
+* Define the environment variable UNITY_HOME to be equal to the location of Unity
